@@ -1,8 +1,36 @@
+*,
+::befor,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+}
+
 .container {
-  background-color: lightblue;
-  min-width: 200px;
-  max-width: 763px;
+  position: relative;
+  width: clamp(300px, 55vw, 1400px);
   margin: 58px auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.choice-dark-mode {
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
