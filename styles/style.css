@@ -1,3 +1,14 @@
+.not-definition p:nth-child(2) {
+  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
+}
+
+.not-definition p:nth-child(3) {
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5rem;
+}
+
 *,
 ::befor,
 ::after {
@@ -31,6 +42,16 @@ form {
 .choice-dark-mode {
   display: flex;
   align-items: center;
+}
+
+.not-definition {
+  text-align: center;
+}
+.not-definition p:nth-child(1) {
+  font-size: 64px;
+}
+.not-definition p:nth-child(2) {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

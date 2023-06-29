@@ -32,3 +32,20 @@ form {
     display: flex;
     align-items: center;
 }
+
+.not-definition {
+    text-align: center;
+
+    p {
+        &:nth-child(1) {
+            font-size: 64px;
+        }
+        &:nth-child(2) {
+            @extend %headingSInter;
+            font-weight: 700;
+        }
+        &:nth-child(3) {
+            @extend %bodyMInter;
+        }
+    }
+}
