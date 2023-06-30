@@ -44,8 +44,9 @@ async function dictApiCall(searchInput) {
 
 function createDictionnary(data) {
 
-    // const titleWord = data[0].word;
-    // const phoneticWord = data[0].phonetic;
+    const divPhonetic = document.createElement('div');
+    divPhonetic.className = "container-phonetic";
+
     const phoneticAudio = [];
     data[0].phonetics.forEach(el => {
         if(el.audio){
@@ -53,11 +54,19 @@ function createDictionnary(data) {
         }
     })
 
-    resultDisplay.innerHTML = `<h1>${data[0].word}</h3>
-                            <p>${data[0].phonetic}</p>`;
+    divPhonetic.innerHTML = `
+        <h1>${data[0].word}</h3>
+        <p>${data[0].phonetic}</p>
+        <div class="player-phonetic">
+            <img id="play-phonetic" src="assets/images/icon-play.svg" alt="logo play audio">
+            <audio id="sound-phonetic" src="${phoneticAudio[0]}" controls></audio>
+        </div>`;
+
+    resultDisplay.appendChild(divPhonetic)
+    
 
 
-    console.log(phoneticAudio);
+    console.log(phoneticAudio[0]);
 
 
 
