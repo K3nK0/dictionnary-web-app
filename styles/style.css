@@ -45,6 +45,7 @@ form {
 }
 
 .not-definition {
+  display: none;
   text-align: center;
 }
 .not-definition p:nth-child(1) {
@@ -52,6 +53,9 @@ form {
 }
 .not-definition p:nth-child(2) {
   font-weight: 700;
+}
+.not-definition.active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

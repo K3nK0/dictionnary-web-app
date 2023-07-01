@@ -34,6 +34,7 @@ form {
 }
 
 .not-definition {
+    display: none;
     text-align: center;
 
     p {
@@ -47,5 +48,9 @@ form {
         &:nth-child(3) {
             @extend %bodyMInter;
         }
+    }
+
+    &.active{
+        display: block;
     }
 }
