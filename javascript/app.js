@@ -78,15 +78,32 @@ function createDictionnary(data) {
     const blocMeanings = document.createElement('div');
     blocMeanings.className = "container-meanings";
 
-    console.log(data[0].meanings);
+    // console.log(data[0].meanings);
 
     data[0].meanings.forEach((e) => {
         const cardPartOfSpeech = document.createElement('div');
-        cardPartOfSpeech.className('card-partOfSpeech');
+        cardPartOfSpeech.className = "card-partOfSpeech";
 
-        cardPartOfSpeech.innerText = e.partOfSpeech;
-        cardPartOfSpeech.innerHTML = '<hr>';
+        cardPartOfSpeech.innerHTML = `
+        <h2>${e.partOfSpeech}</h2>
+        <hr>
+        <h3 class="meaning">Meaning</h3>
+        `;
+
+        e.definitions.forEach((el) => {
+            cardPartOfSpeech.innerHTML += `<li>${el.definition}</li>`;
+        })
+
+        if(e.synonyms){
+            cardPartOfSpeech.innerHTML += `<p><span class="meaning">Synonyms </span>
+            <span class="synonyms">${e.synonyms}</span></p>`
+
+        }
+        
+
+        resultDisplay.appendChild(cardPartOfSpeech);
     })
 
-}
+    resultDisplay.innerHTML += `<p><span class"source">Source </span> <a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]} <span><img src="assets/images/icon-new-window.svg"></span></a>`
 
+}
