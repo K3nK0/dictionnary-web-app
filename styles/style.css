@@ -39,8 +39,13 @@ form {
 }
 form select {
   font-weight: 700;
+  appearance: none;
   border: none;
   background-color: transparent;
+}
+form .choice-typo {
+  width: 100%;
+  border: none;
 }
 form option {
   font-weight: 700;

@@ -31,8 +31,14 @@ form {
     select{
         @extend %bodyM;
         font-weight: 700;
+        appearance: none;
         border: none;
         background-color: transparent;
+    }
+
+    .choice-typo {
+        width: 100%;
+        border: none;
     }
 
     option {
