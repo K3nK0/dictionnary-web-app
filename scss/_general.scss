@@ -8,6 +8,7 @@
 
 body {
     position: relative;
+    font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -26,6 +27,28 @@ form {
     display: flex;
     align-items: center;
     gap: 1.5vw;
+
+    select{
+        @extend %bodyM;
+        font-weight: 700;
+        border: none;
+        background-color: transparent;
+    }
+
+    option {
+        @extend %bodyM;
+        font-weight: 700;
+
+        &:nth-child(1){
+            font-family: 'Inter', sans-serif;
+        }
+        &:nth-child(2){
+            font-family: 'Lora', serif;
+        }
+        &:nth-child(3){
+            font-family: 'Inconsolata', monospace;
+        }
+    }
 }
 
 .choice-dark-mode {
@@ -42,11 +65,11 @@ form {
             font-size: 64px;
         }
         &:nth-child(2) {
-            @extend %headingSInter;
+            @extend %headingS;
             font-weight: 700;
         }
         &:nth-child(3) {
-            @extend %bodyMInter;
+            @extend %bodyM;
         }
     }
 

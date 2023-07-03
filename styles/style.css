@@ -1,11 +1,9 @@
 .not-definition p:nth-child(2) {
   font-size: 1.25rem;
-  font-family: "Inter", sans-serif;
 }
 
-.not-definition p:nth-child(3) {
+.not-definition p:nth-child(3), form option, form select {
   font-size: 1.125rem;
-  font-family: "Inter", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -19,6 +17,7 @@
 
 body {
   position: relative;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -37,6 +36,23 @@ form {
   display: flex;
   align-items: center;
   gap: 1.5vw;
+}
+form select {
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+}
+form option {
+  font-weight: 700;
+}
+form option:nth-child(1) {
+  font-family: "Inter", sans-serif;
+}
+form option:nth-child(2) {
+  font-family: "Lora", serif;
+}
+form option:nth-child(3) {
+  font-family: "Inconsolata", monospace;
 }
 
 .choice-dark-mode {
