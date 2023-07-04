@@ -23,10 +23,9 @@ header {
     align-items: center;
 }
 
-form {
+.form-typography {
     display: flex;
     align-items: center;
-    gap: 1.5vw;
 
     select{
         @extend %bodyM;
@@ -34,11 +33,19 @@ form {
         appearance: none;
         border: none;
         background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        margin-right: 1.12rem;
+    }
+
+    img {
+        padding-right: 1.63rem;
     }
 
     .choice-typo {
         width: 100%;
-        border: none;
+        border-right: 1px solid $separation;
+        margin-right: 1.63rem;
     }
 
     option {
@@ -59,7 +66,67 @@ form {
 
 .choice-dark-mode {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 1.2rem;
+    position: relative;
+    width: 5rem;
+    height: 1.25rem;
+
+
+    input[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 40px;
+        height: 100%;
+        background: $textGrey;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-border-radius: 9999px;
+        -moz-border-radius: 9999px;
+        border-radius: 9999px;
+        position: relative;
+
+        &::after {
+            content: "";
+            background: $white;
+            width: 15px;
+            height: 15px;
+            border-radius: 9999px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 3px;
+            transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+        }
+    }
+
+    input:checked + label {
+        background: $violet;
+    }
+
+    input:checked + label::after {
+        left: calc(100% - 18px);
+    }
+
+    .container-logo-dark-mode {
+        position: relative;
+        height: 100%;
+
+         img {
+            position: relative;
+            height: 100%;
+         }
+    }
 }
 
 .not-definition {

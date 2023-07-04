@@ -66,10 +66,15 @@ function createDictionnary(data) {
 
     resultDisplay.appendChild(divPhonetic)
 
-    const iconPhonetic = document.getElementById('play-phonetic');
-    const audioPhonetic = document.getElementById('sound-phonetic');
+    let iconPhonetic = document.getElementById('play-phonetic');
+    let audioPhonetic = document.getElementById('sound-phonetic');
 
-    iconPhonetic.addEventListener('click', playPhonetic(audioPhonetic));
+    iconPhonetic.addEventListener('click', () => {
+        console.log("clic music");
+        audioPhonetic.volume = 1;
+        audioPhonetic.play();
+    });
+    
 
 
     const blocMeanings = document.createElement('div');
@@ -101,12 +106,9 @@ function createDictionnary(data) {
         resultDisplay.appendChild(cardPartOfSpeech);
     })
 
+
+
     resultDisplay.innerHTML += `<p><span class"source">Source </span> <a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]} <span><img src="assets/images/icon-new-window.svg"></span></a>`
 
 }
 
-function playPhonetic(audio){
-    console.log("clic music");
-    audio.volume = 1;
-    audio.play();
-}

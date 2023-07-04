@@ -22,17 +22,22 @@
         <img src="assets/images/logo.svg" alt="logo">
       </div>
   
-      <form>
+      <form class="form-typography">
         <div class="choice-typo">
           <select name="typography" id="typography">
             <option value="sans-serif">Sans Serif</option>
             <option value="serif">Serif</option>
             <option value="mono">Mono</option>
           </select>
+          <img src="assets/images/icon-arrow-down.svg" alt="arrow down">
         </div>
     
         <div class="choice-dark-mode">
-          <input type="checkbox">
+          <div class="container-input-checkbox">
+            <input type="checkbox" id="switch">
+            <label for="switch">toggle</label>
+          </div>
+          
           <div class="container-logo-dark-mode">
             <img src="assets/images/icon-moon.svg" alt="logo moon for dark mode">
           </div>
