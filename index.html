@@ -24,12 +24,25 @@
   
       <form class="form-typography">
         <div class="choice-typo">
-          <select name="typography" id="typography">
-            <option value="sans-serif">Sans Serif</option>
-            <option value="serif">Serif</option>
-            <option value="mono">Mono</option>
-          </select>
-          <img src="assets/images/icon-arrow-down.svg" alt="arrow down">
+
+          <p id="label-typo">Sans-Serif</p>
+
+          <div class="card-typography" id="typography">
+            <div>
+              <input type="radio" name="typo" id="sans-serif" value="Sans-Serif" checked>
+              <label for="sans-serif">Sans-Serif</label>
+            </div>
+            <div>
+              <input type="radio" name="typo" id="serif" value="Serif">
+              <label for="serif">Serif</label>
+            </div>
+            <div>
+              <input type="radio" name="typo" id="mono" value="Mono">
+              <label for="mono">Mono</label>
+            </div>
+
+          </div>
+
         </div>
     
         <div class="choice-dark-mode">

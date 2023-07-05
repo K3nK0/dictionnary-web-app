@@ -1,15 +1,31 @@
-const inputTypography = document.getElementById('typography');
-const body = document.querySelector('body')
+const cardTypography = document.getElementById('typography');
+const labelTypo = document.getElementById('label-typo');
+const inputsTypo = document.querySelectorAll('.card-typography input');
 
-inputTypography.addEventListener('input', (e) => {
-    console.log(inputTypography.value);
-    if(inputTypography.value === 'sans-serif'){
+const body = document.querySelector('body');
+
+cardTypography.addEventListener('click', () => {
+    getLabel();
+    getTypo();
+})
+
+function getLabel(){
+    inputsTypo.forEach((el) => {
+        if(el.checked){
+            labelTypo.textContent = el.value
+        }
+    }) 
+}
+
+function getTypo(){
+    console.log(labelTypo.textContent);
+    if(labelTypo.textContent === 'Sans-Serif'){
         body.style.fontFamily = "'Inter', sans-serif";
     }
-    else if(inputTypography.value === 'serif'){
+    else if(labelTypo.textContent === 'Serif'){
         body.style.fontFamily = "'Lora', serif";
     }
-    else if(inputTypography.value === 'mono'){
+    else if(labelTypo.textContent === 'Mono'){
         body.style.fontFamily = "'Inconsolata', monospace";
     }
-})
+}
