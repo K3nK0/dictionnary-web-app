@@ -2,7 +2,6 @@ const cardTypography = document.getElementById('typography');
 const labelTypo = document.getElementById('label-typo');
 const inputsTypo = document.querySelectorAll('.card-typography input');
 
-const body = document.querySelector('body');
 
 cardTypography.addEventListener('click', () => {
     getLabel();
@@ -11,21 +10,32 @@ cardTypography.addEventListener('click', () => {
 
 function getLabel(){
     inputsTypo.forEach((el) => {
+        el.addEventListener('click', () => {
+            cardTypo.classList.toggle('active-card-typography');
+        })
+        
         if(el.checked){
             labelTypo.textContent = el.value
         }
+        
     }) 
 }
 
 function getTypo(){
-    console.log(labelTypo.textContent);
     if(labelTypo.textContent === 'Sans-Serif'){
-        body.style.fontFamily = "'Inter', sans-serif";
+        document.body.style.fontFamily = "'Inter', sans-serif";
     }
     else if(labelTypo.textContent === 'Serif'){
-        body.style.fontFamily = "'Lora', serif";
+        document.body.style.fontFamily = "'Lora', serif";
     }
     else if(labelTypo.textContent === 'Mono'){
-        body.style.fontFamily = "'Inconsolata', monospace";
+        document.body.style.fontFamily = "'Inconsolata', monospace";
     }
 }
+
+const selectTypo = document.getElementById('select-typo')
+const cardTypo = document.querySelector('.card-typography')
+
+selectTypo.addEventListener('click', () => {
+    cardTypo.classList.toggle('active-card-typography')
+})
