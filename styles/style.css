@@ -22,6 +22,10 @@ html {
 body {
   position: relative;
   font-family: "Inter", sans-serif;
+  background: #FFFFFF;
+}
+body.darkMode {
+  background: #050505;
 }
 
 .container {
@@ -41,6 +45,10 @@ header {
 .form-typography {
   display: flex;
   align-items: center;
+  color: #2D2D2D;
+}
+.form-typography.darkMode {
+  color: #FFFFFF;
 }
 .form-typography .choice-typo {
   width: 100%;
@@ -57,6 +65,7 @@ header {
 .form-typography #label-typo {
   font-weight: 700;
   margin-right: 1.5rem;
+  color: inherit;
 }
 
 .card-typography {
@@ -73,6 +82,9 @@ header {
 }
 .card-typography.active-card-typography {
   display: block;
+}
+.card-typography.active-card-typography.darkMode {
+  box-shadow: 0px 5px 30px #A445ED;
 }
 
 .input-typo {
@@ -152,9 +164,13 @@ header {
   position: relative;
   height: 100%;
 }
-.choice-dark-mode .container-logo-dark-mode img {
+.choice-dark-mode .container-logo-dark-mode #moon {
   position: relative;
   height: 100%;
+  stroke: #757575;
+}
+.choice-dark-mode .container-logo-dark-mode #moon.darkMode {
+  stroke: #A445ED;
 }
 
 .not-definition {

@@ -13,6 +13,11 @@ html{
 body {
     position: relative;
     font-family: 'Inter', sans-serif;
+    background: $white;
+
+    &.darkMode{
+        background: $backgroundDark;
+    }
 }
 
 .container {
@@ -32,6 +37,11 @@ header {
 .form-typography {
     display: flex;
     align-items: center;
+    color: $textBlack;
+
+    &.darkMode {
+        color: $white;
+    }
 
     .choice-typo {
         width: 100%;
@@ -51,6 +61,7 @@ header {
         @extend %bodyM;
         font-weight: 700;
         margin-right: 1.5rem;
+        color: inherit;
     }
 }
 
@@ -68,6 +79,10 @@ header {
 
     &.active-card-typography{
         display: block;
+
+        &.darkMode {
+            box-shadow: 0px 5px 30px $violet;
+        }
     }
 }
 
@@ -161,9 +176,14 @@ header {
         position: relative;
         height: 100%;
 
-         img {
+         #moon {
             position: relative;
             height: 100%;
+            stroke: $textGrey;
+
+            &.darkMode {
+                stroke: $violet;
+            }
          }
     }
 }
