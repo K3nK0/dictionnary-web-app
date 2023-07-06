@@ -1,4 +1,4 @@
-.not-definition p:nth-child(2) {
+.not-definition p:nth-child(2), .input-search .search-empty, .input-search #search {
   font-size: 1.25rem;
 }
 
@@ -8,7 +8,7 @@
 }
 
 *,
-:befor,
+:before,
 :after {
   box-sizing: border-box;
   padding: 0;
@@ -23,6 +23,7 @@ body {
   position: relative;
   font-family: "Inter", sans-serif;
   background: #FFFFFF;
+  width: 100vw;
 }
 body.darkMode {
   background: #050505;
@@ -35,6 +36,8 @@ body.darkMode {
 }
 
 header {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,6 +80,7 @@ header {
   white-space: nowrap;
   right: 1.63rem;
   top: 40px;
+  background: #FFFFFF;
   z-index: 5;
   display: none;
 }
@@ -85,6 +89,7 @@ header {
 }
 .card-typography.active-card-typography.darkMode {
   box-shadow: 0px 5px 30px #A445ED;
+  background: #050505;
 }
 
 .input-typo {
@@ -171,6 +176,48 @@ header {
 }
 .choice-dark-mode .container-logo-dark-mode #moon.darkMode {
   stroke: #A445ED;
+}
+
+main {
+  position: relative;
+  width: 100%;
+}
+
+.input-search {
+  position: relative;
+  width: 100%;
+}
+.input-search #search {
+  position: relative;
+  width: 100%;
+  border-radius: 1rem;
+  background: #F4F4F4;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  color: #2D2D2D;
+  margin-bottom: 0.5rem;
+}
+.input-search #search ::placeholder {
+  color: #757575;
+}
+.input-search #search:focus {
+  outline: solid 1px #A445ED;
+}
+.input-search #search.darkMode {
+  background: #1F1F1F;
+  color: #FFFFFF;
+}
+.input-search img {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.input-search .search-empty {
+  color: #FF5252;
 }
 
 .not-definition {

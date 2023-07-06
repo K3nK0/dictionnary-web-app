@@ -11,11 +11,13 @@ formSearch.addEventListener('submit', (e) => {
 
     if(input.value === ""){
         errorEmpty.textContent = "Whoops, can't be empty...";
+        input.style.outline = 'solid 1px #FF5252';
         resultDisplay.textContent = "";
         notDefinition.classList.remove('active');
         return;
     }else{
         errorEmpty.textContent = "";
+        input.style.outline = 'none';
         resultDisplay.textContent = "";
         notDefinition.classList.remove('active');
         dictApiCall(input.value);
