@@ -1,3 +1,12 @@
+.container-phonetic h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.container-phonetic p {
+  font-size: 1.5rem;
+}
+
 .not-definition p:nth-child(2), .input-search .search-empty, .input-search #search {
   font-size: 1.25rem;
 }
@@ -186,6 +195,7 @@ main {
 .input-search {
   position: relative;
   width: 100%;
+  margin-bottom: 3.25rem;
 }
 .input-search #search {
   position: relative;
@@ -223,15 +233,69 @@ main {
 .not-definition {
   display: none;
   text-align: center;
+  margin-top: 5rem;
 }
 .not-definition p:nth-child(1) {
   font-size: 64px;
+  margin-bottom: 2.75rem;
 }
 .not-definition p:nth-child(2) {
   font-weight: 700;
+  color: #2D2D2D;
+  margin-bottom: 1.5rem;
+}
+.not-definition p:nth-child(2).darkMode {
+  color: #FFFFFF;
+}
+.not-definition p:nth-child(3) {
+  color: #757575;
 }
 .not-definition.active {
   display: block;
+}
+
+.container-phonetic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.container-phonetic h1 {
+  color: #2D2D2D;
+  margin-bottom: 0.5rem;
+}
+.container-phonetic h1.darkMode {
+  color: #FFFFFF;
+}
+.container-phonetic p {
+  color: #A445ED;
+}
+
+#play-phonetic {
+  cursor: pointer;
+}
+#play-phonetic:hover g {
+  fill: #FFFFFF;
+}
+#play-phonetic:hover circle {
+  fill: #A445ED;
+  opacity: 1;
+}
+
+.card-partOfSpeech {
+  position: relative;
+}
+.card-partOfSpeech .partOfSpeech-title {
+  display: flex;
+  align-items: center;
+}
+.card-partOfSpeech h2 {
+  flex-grow: 0;
+}
+.card-partOfSpeech .row {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #E9E9E9;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,10 @@
 const btnDarkMode = document.querySelector('#switch');
 
-const allElement = document.querySelectorAll('.light-mode');
+
 
 btnDarkMode.addEventListener('click', ()=> {
-    console.log(btnDarkMode.checked);
+    const allElement = document.querySelectorAll('.light-mode');
+
     if(btnDarkMode.checked){
         allElement.forEach(el => {
             el.classList.add('darkMode')

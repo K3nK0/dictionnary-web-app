@@ -59,10 +59,12 @@ function createDictionnary(data) {
     })
 
     divPhonetic.innerHTML = `
-        <h1>${data[0].word}</h3>
-        <p>${data[0].phonetic}</p>
+        <div class="text-phonetic">
+            <h1 class="light-mode">${data[0].word}</h1>
+            <p>${data[0].phonetic}</p>
+        </div>
         <div class="player-phonetic">
-            <img id="play-phonetic" src="assets/images/icon-play.svg" alt="logo play audio">
+            <svg id="play-phonetic" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g fill="#A445ED" fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/><path d="M29 27v21l21-10.5z"/></g></svg>
             <audio id="sound-phonetic" src="${phoneticAudio[0]}"></audio>
         </div>`;
 
@@ -89,8 +91,10 @@ function createDictionnary(data) {
         cardPartOfSpeech.className = "card-partOfSpeech";
 
         cardPartOfSpeech.innerHTML = `
-        <h2>${e.partOfSpeech}</h2>
-        <hr>
+        <div class="partOfSpeech-title">
+            <h2>${e.partOfSpeech}</h2>
+            <div class="row"></div>
+        </div>
         <h3 class="meaning">Meaning</h3>
         `;
 

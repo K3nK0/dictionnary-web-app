@@ -205,6 +205,7 @@ main{
 .input-search {
     position: relative;
     width: 100%;
+    margin-bottom: 3.25rem;
 
     #search {
         position: relative;
@@ -252,21 +253,91 @@ main{
 .not-definition {
     display: none;
     text-align: center;
+    margin-top: 5rem;
 
     p {
         &:nth-child(1) {
             font-size: 64px;
+            margin-bottom: 2.75rem;
         }
         &:nth-child(2) {
             @extend %headingS;
             font-weight: 700;
+            color: $textBlack;
+            margin-bottom: 1.5rem;
+
+            &.darkMode {
+                color: $white;
+            }
         }
         &:nth-child(3) {
             @extend %bodyM;
+            color: $textGrey;
         }
     }
 
     &.active{
         display: block;
+    }
+}
+
+// ------- PHONETIC -----------------
+
+.container-phonetic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+
+    h1 {
+        @extend %headingL;
+        color: $textBlack;
+        margin-bottom: 0.5rem;
+
+        &.darkMode {
+            color: $white;
+        }
+    }
+
+    p {
+        @extend %headingM;
+        color: $violet;
+    }
+}
+
+#play-phonetic {
+    cursor: pointer;
+
+    &:hover {
+        g {
+            fill: $white;
+        }
+
+        circle {
+            fill: $violet;
+            opacity: 1;
+        }
+    }
+}
+
+
+// -------------CARD PART OF SPEECH ------------------
+
+.card-partOfSpeech {
+    position: relative;
+
+    .partOfSpeech-title {
+        display: flex;
+        align-items: center;
+    }
+
+    h2 {
+        flex-grow: 0;
+    }
+
+    .row {
+        flex-grow: 1;
+        height: 1px;
+        background-color: $separation;
     }
 }
