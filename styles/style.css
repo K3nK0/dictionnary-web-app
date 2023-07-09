@@ -1,19 +1,25 @@
+@charset "UTF-8";
 .container-phonetic h1 {
   font-size: 4rem;
   font-weight: 700;
 }
 
-.container-phonetic p {
+.card-partOfSpeech h2, .container-phonetic p {
   font-size: 1.5rem;
 }
 
-.not-definition p:nth-child(2), .input-search .search-empty, .input-search #search {
+.card-partOfSpeech .synonyms, .card-partOfSpeech .meaning, .not-definition p:nth-child(2), .input-search .search-empty, .input-search #search {
   font-size: 1.25rem;
 }
 
-.not-definition p:nth-child(3), .input-typo, .form-typography #label-typo {
+.card-partOfSpeech li, .not-definition p:nth-child(3), .input-typo, .form-typography #label-typo {
   font-size: 1.125rem;
   line-height: 1.5rem;
+}
+
+.container-source .source {
+  font-size: 0.875rem;
+  text-decoration: underline;
 }
 
 *,
@@ -215,6 +221,10 @@ main {
 .input-search #search:focus {
   outline: solid 1px #A445ED;
 }
+.input-search #search:focus.darkMode {
+  background: #1F1F1F;
+  color: #FFFFFF;
+}
 .input-search #search.darkMode {
   background: #1F1F1F;
   color: #FFFFFF;
@@ -288,14 +298,62 @@ main {
 .card-partOfSpeech .partOfSpeech-title {
   display: flex;
   align-items: center;
+  margin-bottom: 2.5rem;
 }
 .card-partOfSpeech h2 {
   flex-grow: 0;
+  margin-right: 1.25rem;
+  font-style: italic;
+  font-weight: 700;
+}
+.card-partOfSpeech h2.darkMode {
+  color: #FFFFFF;
 }
 .card-partOfSpeech .row {
   flex-grow: 1;
   height: 1px;
   background-color: #E9E9E9;
+}
+.card-partOfSpeech .meaning {
+  color: #757575;
+  font-weight: 400;
+  margin-bottom: 1.56rem;
+}
+.card-partOfSpeech .list-definition {
+  margin-bottom: 3.94rem;
+}
+.card-partOfSpeech li {
+  color: #2D2D2D;
+  margin-bottom: 0.81rem;
+  margin-left: 1.38rem;
+  list-style: none;
+}
+.card-partOfSpeech li::before {
+  content: "•";
+  color: #A445ED;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+.card-partOfSpeech li.darkMode {
+  color: #FFFFFF;
+}
+.card-partOfSpeech .synonyms {
+  margin-left: 1.5rem;
+  font-weight: 700;
+  color: #A445ED;
+}
+
+.container-source {
+  border-top: solid 1px #E9E9E9;
+  padding-top: 1.19rem;
+}
+.container-source .source {
+  color: #757575;
+  margin-right: 1.31rem;
+}
+.container-source a {
+  color: #2D2D2D;
 }
 
 /*# sourceMappingURL=style.css.map */

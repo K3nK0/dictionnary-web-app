@@ -6,6 +6,8 @@ const errorEmpty = document.querySelector('.search-empty');
 const resultDisplay = document.querySelector('.result-display');
 const notDefinition = document.querySelector('.not-definition');
 
+input.addEventListener('input', darkMode)
+
 formSearch.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -17,7 +19,7 @@ formSearch.addEventListener('submit', (e) => {
         return;
     }else{
         errorEmpty.textContent = "";
-        input.style.outline = 'none';
+        input.style.outline = 'solid 1px #A445ED';
         resultDisplay.textContent = "";
         notDefinition.classList.remove('active');
         dictApiCall(input.value);
@@ -47,6 +49,8 @@ async function dictApiCall(searchInput) {
 }
 
 function createDictionnary(data) {
+
+    input.style.outline = 'none';
 
     const divPhonetic = document.createElement('div');
     divPhonetic.className = "container-phonetic";
@@ -92,17 +96,22 @@ function createDictionnary(data) {
 
         cardPartOfSpeech.innerHTML = `
         <div class="partOfSpeech-title">
-            <h2>${e.partOfSpeech}</h2>
+            <h2 class="light-mode">${e.partOfSpeech}</h2>
             <div class="row"></div>
         </div>
         <h3 class="meaning">Meaning</h3>
         `;
 
+        const listDefinitions = document.createElement('ul');
+        listDefinitions.className = "list-definition";
+
         e.definitions.forEach((el) => {
-            cardPartOfSpeech.innerHTML += `<li>${el.definition}</li>`;
+            listDefinitions.innerHTML += `<li class="light-mode">${el.definition}</li>`;
         })
 
-        if(e.synonyms){
+        cardPartOfSpeech.appendChild(listDefinitions);
+
+        if(!e.synonyms === ""){
             cardPartOfSpeech.innerHTML += `<p><span class="meaning">Synonyms </span>
             <span class="synonyms">${e.synonyms}</span></p>`
 
@@ -114,7 +123,32 @@ function createDictionnary(data) {
 
 
 
-    resultDisplay.innerHTML += `<p><span class"source">Source </span> <a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]} <span><img src="assets/images/icon-new-window.svg"></span></a>`
+    resultDisplay.innerHTML += `
+    <div class="container-source">
+    <p><span class="source">Source</span> <a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]} <span><img src="assets/images/icon-new-window.svg"></span></a>
+    </div>`;
+
+    darkMode();
 
 }
 
+
+
+const btnDarkMode = document.querySelector('#switch');
+
+btnDarkMode.addEventListener('click', darkMode)
+
+function darkMode(){
+    const allElement = document.querySelectorAll('.light-mode');
+
+    if(btnDarkMode.checked){
+        allElement.forEach(el => {
+            el.classList.add('darkMode')
+        })
+    }
+    else{
+        allElement.forEach(el => {
+            el.classList.remove('darkMode')
+        })
+    }
+}

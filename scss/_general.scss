@@ -226,6 +226,10 @@ main{
 
         &:focus {
             outline: solid 1px $violet;
+            &.darkMode {
+                background: $backgroundInputDark;
+                color: $white;
+            }
         }
 
         &.darkMode {
@@ -329,15 +333,78 @@ main{
     .partOfSpeech-title {
         display: flex;
         align-items: center;
+        margin-bottom: 2.5rem;
     }
 
     h2 {
         flex-grow: 0;
+        margin-right: 1.25rem;
+        @extend %headingM;
+        font-style: italic;
+        font-weight: 700;
+
+        &.darkMode {
+            color: $white;
+        }
     }
 
     .row {
         flex-grow: 1;
         height: 1px;
         background-color: $separation;
+    }
+
+    .meaning {
+        color: $textGrey;
+        @extend %headingS;
+        font-weight: 400;
+        margin-bottom: 1.56rem;
+    }
+
+    .list-definition {
+        margin-bottom: 3.94rem;
+    }
+
+    li {
+        @extend %bodyM;
+        color: $textBlack;
+        margin-bottom: 0.81rem;
+        margin-left: 1.38rem;
+        list-style: none;
+
+        &::before {
+            content: "\2022";
+            color: $violet;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            // margin-right: 1.25rem;
+        }
+
+        &.darkMode {
+            color: $white;
+        }
+    }
+
+    .synonyms {
+        margin-left: 1.5rem;
+        @extend %headingS;
+        font-weight: 700;
+        color: $violet;
+    }
+}
+
+.container-source {
+    border-top: solid 1px $separation;
+    padding-top: 1.19rem;
+
+    .source {
+        @extend %bodyS;
+        color: $textGrey;
+        margin-right: 1.31rem;
+    }
+
+    a{
+        color: $textBlack;
     }
 }
