@@ -133,8 +133,18 @@ function createDictionnary(data) {
 }
 
 
-
 const btnDarkMode = document.querySelector('#switch');
+
+const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+window.addEventListener('load', () => {
+    console.log("Le site a chargé !")
+    console.log(dark);
+    if(dark){
+        btnDarkMode.checked = true;
+        darkMode();
+    }
+})
+
 
 btnDarkMode.addEventListener('click', darkMode)
 
@@ -152,3 +162,6 @@ function darkMode(){
         })
     }
 }
+
+
+
