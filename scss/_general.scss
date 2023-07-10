@@ -370,16 +370,18 @@ main{
         @extend %bodyM;
         color: $textBlack;
         margin-bottom: 0.81rem;
-        margin-left: 1.38rem;
+        margin-left: 2.94rem;
         list-style: none;
+        position: relative;
 
         &::before {
             content: "\2022";
+            position: absolute;
             color: $violet;
             font-weight: bold;
             display: inline-block;
             width: 1em;
-            // margin-right: 1.25rem;
+            left: -1.7rem;
         }
 
         &.darkMode {
@@ -387,12 +389,29 @@ main{
         }
     }
 
-    .synonyms {
-        margin-left: 1.5rem;
-        @extend %headingS;
-        font-weight: 700;
-        color: $violet;
+    .example {
+        @extend %bodyM;
+        color: $textGrey;
+        margin-left: 2.94rem;
+        margin-bottom: 0.81rem;
     }
+
+    p {
+        position: relative;
+        // width: 100%;
+        overflow-wrap:break-word;
+        hyphens: manual;
+
+        .synonyms {
+            position: relative;
+            margin-left: 1.5rem;
+            @extend %headingS;
+            font-weight: 700;
+            color: $violet;
+            // width: 100%;
+        }
+    }
+    
 }
 
 .container-source {
@@ -403,10 +422,34 @@ main{
         @extend %bodyS;
         color: $textGrey;
         margin-right: 1.31rem;
+        position: relative;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            height: .08px;
+            width: 100%;
+            background: $textGrey;
+            left: 0;
+            bottom: 0;
+        }
     }
 
     a{
+        @extend %bodyS;
         color: $textBlack;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: .08px;
+            width: 100%;
+            background: $textBlack;
+            left: 0;
+            bottom: 0;
+        }
 
         span {
             margin-left: 0.56rem;
@@ -414,6 +457,14 @@ main{
 
         &.darkMode {
             color: $white;
-        }
+
+            &::after {
+                background: $white;
+            }
+        }   
+    }
+
+    img {
+        margin-left: 0.56rem;
     }
 }

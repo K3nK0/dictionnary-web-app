@@ -107,6 +107,9 @@ function createDictionnary(data) {
 
         e.definitions.forEach((el) => {
             listDefinitions.innerHTML += `<li class="light-mode">${el.definition}</li>`;
+            if(el.example){
+                listDefinitions.innerHTML += `<p class="example">"${el.example}"</p>`
+            }
         })
 
         cardPartOfSpeech.appendChild(listDefinitions);
@@ -125,7 +128,8 @@ function createDictionnary(data) {
 
     resultDisplay.innerHTML += `
     <div class="container-source">
-    <p><span class="source">Source</span> <a class="light-mode" href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]}<span><img src="assets/images/icon-new-window.svg"></span></a>
+    <p><span class="source">Source</span> <a class="light-mode" href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]}</a>
+    <img src="assets/images/icon-new-window.svg">
     </div>`;
 
     darkMode();
