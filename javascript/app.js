@@ -111,7 +111,7 @@ function createDictionnary(data) {
 
         cardPartOfSpeech.appendChild(listDefinitions);
 
-        if(!e.synonyms === ""){
+        if(e.synonyms.length > 0){
             cardPartOfSpeech.innerHTML += `<p><span class="meaning">Synonyms </span>
             <span class="synonyms">${e.synonyms}</span></p>`
 
@@ -125,7 +125,7 @@ function createDictionnary(data) {
 
     resultDisplay.innerHTML += `
     <div class="container-source">
-    <p><span class="source">Source</span> <a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]} <span><img src="assets/images/icon-new-window.svg"></span></a>
+    <p><span class="source">Source</span> <a class="light-mode" href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]}<span><img src="assets/images/icon-new-window.svg"></span></a>
     </div>`;
 
     darkMode();

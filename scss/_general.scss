@@ -329,6 +329,7 @@ main{
 
 .card-partOfSpeech {
     position: relative;
+    margin-bottom: 2.5rem;
 
     .partOfSpeech-title {
         display: flex;
@@ -406,5 +407,13 @@ main{
 
     a{
         color: $textBlack;
+
+        span {
+            margin-left: 0.56rem;
+        }
+
+        &.darkMode {
+            color: $white;
+        }
     }
 }

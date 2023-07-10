@@ -294,6 +294,7 @@ main {
 
 .card-partOfSpeech {
   position: relative;
+  margin-bottom: 2.5rem;
 }
 .card-partOfSpeech .partOfSpeech-title {
   display: flex;
@@ -354,6 +355,12 @@ main {
 }
 .container-source a {
   color: #2D2D2D;
+}
+.container-source a span {
+  margin-left: 0.56rem;
+}
+.container-source a.darkMode {
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=style.css.map */
