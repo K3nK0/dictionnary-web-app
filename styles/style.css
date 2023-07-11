@@ -364,6 +364,7 @@ main {
 .container-source {
   border-top: solid 1px #E9E9E9;
   padding-top: 1.19rem;
+  display: flex;
 }
 .container-source .source {
   color: #757575;
@@ -406,6 +407,40 @@ main {
 }
 .container-source img {
   margin-left: 0.56rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 89vw;
+  }
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 15px;
+  }
+  .container-phonetic h1 {
+    font-size: 2rem;
+  }
+  #play-phonetic {
+    width: 48px;
+    height: 48px;
+  }
+  .card-partOfSpeech li {
+    margin-left: 1.56rem;
+  }
+  .card-partOfSpeech li::before {
+    left: -1.7rem;
+  }
+  .container-source {
+    display: block;
+  }
+  .container-source .source {
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .container-source .source::after {
+    width: 45px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
