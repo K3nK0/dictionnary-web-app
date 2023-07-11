@@ -288,10 +288,11 @@ main{
 // ------- PHONETIC -----------------
 
 .container-phonetic {
-    display: flex;
+    // display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.5rem;
+    display: none;
 
     h1 {
         @extend %headingL;

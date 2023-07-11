@@ -5,6 +5,7 @@ const input = document.getElementById('search');
 const errorEmpty = document.querySelector('.search-empty');
 const resultDisplay = document.querySelector('.result-display');
 const notDefinition = document.querySelector('.not-definition');
+const phoneticContainer = document.querySelector('.container-phonetic');
 
 input.addEventListener('input', () => {
     darkMode();
@@ -19,10 +20,12 @@ input.addEventListener('blur', (event)=> {
     input.style.outline = '';
 })
 
+
 formSearch.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(input.value === ""){
+        phoneticContainer.style.display = "none";
         errorEmpty.textContent = "Whoops, can't be empty...";
         input.style.outline = 'solid 1px #FF5252';
         resultDisplay.textContent = "";
@@ -32,6 +35,7 @@ formSearch.addEventListener('submit', (e) => {
         errorEmpty.textContent = "";
         input.style.outline = 'solid 1px #A445ED';
         resultDisplay.textContent = "";
+        phoneticContainer.style.display = "none";
         notDefinition.classList.remove('active');
         dictApiCall(input.value);
     }
@@ -60,41 +64,28 @@ async function dictApiCall(searchInput) {
     }
 }
 
+
+const phoneticTitle = document.querySelector('.text-phonetic h1');
+const phoneticText = document.querySelector('.text-phonetic p');
+const phoneticPlayer = document.querySelector('.player-phonetic audio')
+
 function createDictionnary(data) {
 
     input.style.outline = 'none';
 
-    const divPhonetic = document.createElement('div');
-    divPhonetic.className = "container-phonetic";
+    phoneticTitle.textContent = data[0].word;
+    phoneticText.textContent = data[0].phonetic;
 
-    const phoneticAudio = [];
-    data[0].phonetics.forEach(el => {
-        if(el.audio){
-            phoneticAudio.push(el.audio)
+    const linkAudio = [];
+    data[0].phonetics.forEach((e) => {
+        if(e.audio){
+            linkAudio.push(e.audio)
         }
     })
 
-    divPhonetic.innerHTML = `
-        <div class="text-phonetic">
-            <h1 class="light-mode">${data[0].word}</h1>
-            <p>${data[0].phonetic}</p>
-        </div>
-        <div class="player-phonetic">
-            <svg id="play-phonetic" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g fill="#A445ED" fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/><path d="M29 27v21l21-10.5z"/></g></svg>
-            <audio id="sound-phonetic" src="${phoneticAudio[0]}"></audio>
-        </div>`;
+    phoneticPlayer.src = linkAudio[0];
 
-    resultDisplay.appendChild(divPhonetic)
-
-    let iconPhonetic = document.getElementById('play-phonetic');
-    let audioPhonetic = document.getElementById('sound-phonetic');
-
-    iconPhonetic.addEventListener('click', () => {
-        console.log("clic music");
-        audioPhonetic.volume = 1;
-        audioPhonetic.play();
-    });
-    
+    phoneticContainer.style.display = "flex";
 
 
     const blocMeanings = document.createElement('div');
@@ -131,11 +122,9 @@ function createDictionnary(data) {
             <span class="synonyms">${e.synonyms}</span></p>`
 
         }
-        
 
         resultDisplay.appendChild(cardPartOfSpeech);
     })
-
 
 
     resultDisplay.innerHTML += `
@@ -146,6 +135,7 @@ function createDictionnary(data) {
 
     darkMode();
 
+    return audioPhonetic, iconPhonetic
 }
 
 
@@ -179,5 +169,11 @@ function darkMode(){
     }
 }
 
+const iconPhonetic = document.querySelector('.player-phonetic');
+const audioPhonetic = document.getElementById('sound-phonetic');
 
-
+iconPhonetic.addEventListener("click", () => {
+    console.log("clic music");
+    audioPhonetic.volume = 1;
+    audioPhonetic.play();
+});
