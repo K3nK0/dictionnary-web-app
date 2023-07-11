@@ -6,7 +6,18 @@ const errorEmpty = document.querySelector('.search-empty');
 const resultDisplay = document.querySelector('.result-display');
 const notDefinition = document.querySelector('.not-definition');
 
-input.addEventListener('input', darkMode)
+input.addEventListener('input', () => {
+    darkMode();
+    
+})
+
+input.addEventListener('input', (event)=> {
+    input.style.outline = 'solid 1px #A445ED';
+})
+
+input.addEventListener('blur', (event)=> {
+    input.style.outline = '';
+})
 
 formSearch.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -37,6 +48,7 @@ async function dictApiCall(searchInput) {
 
         if(data.title) {
             notDefinition.classList.add('active');
+            input.style.outline = 'none';
             return;
         }
         
@@ -97,7 +109,7 @@ function createDictionnary(data) {
         cardPartOfSpeech.innerHTML = `
         <div class="partOfSpeech-title">
             <h2 class="light-mode">${e.partOfSpeech}</h2>
-            <div class="row"></div>
+            <div class="row light-mode"></div>
         </div>
         <h3 class="meaning">Meaning</h3>
         `;

@@ -353,6 +353,10 @@ main{
         flex-grow: 1;
         height: 1px;
         background-color: $separation;
+
+        &.darkMode {
+            background-color: $separationDark;
+        }
     }
 
     .meaning {
@@ -432,6 +436,7 @@ main{
             background: $textGrey;
             left: 0;
             bottom: 0;
+            opacity: .5;
         }
     }
 
@@ -449,6 +454,7 @@ main{
             background: $textBlack;
             left: 0;
             bottom: 0;
+            opacity: .5;
         }
 
         span {
