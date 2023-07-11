@@ -48,8 +48,6 @@ async function dictApiCall(searchInput) {
 
         const data = await response.json();
 
-        // console.log(data)
-
         if(data.title) {
             notDefinition.classList.add('active');
             input.style.outline = 'none';
@@ -87,11 +85,8 @@ function createDictionnary(data) {
 
     phoneticContainer.style.display = "flex";
 
-
     const blocMeanings = document.createElement('div');
     blocMeanings.className = "container-meanings";
-
-    // console.log(data[0].meanings);
 
     data[0].meanings.forEach((e) => {
         const cardPartOfSpeech = document.createElement('div');
@@ -134,8 +129,6 @@ function createDictionnary(data) {
     </div>`;
 
     darkMode();
-
-    return audioPhonetic, iconPhonetic
 }
 
 
@@ -144,7 +137,6 @@ const btnDarkMode = document.querySelector('#switch');
 const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 window.addEventListener('load', () => {
     console.log("Le site a chargé !")
-    console.log(dark);
     if(dark){
         btnDarkMode.checked = true;
         darkMode();
@@ -173,7 +165,6 @@ const iconPhonetic = document.querySelector('.player-phonetic');
 const audioPhonetic = document.getElementById('sound-phonetic');
 
 iconPhonetic.addEventListener("click", () => {
-    console.log("clic music");
     audioPhonetic.volume = 1;
     audioPhonetic.play();
 });
