@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/dictionnaire-web-app-with-sass-and-fetch-jwtRVWw3ze)
+- Live Site URL: [Add live site URL here](https://dictionnary-web-app-eta.vercel.app/)
 
 
 ## Author
