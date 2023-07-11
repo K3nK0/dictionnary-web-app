@@ -123,7 +123,7 @@ function createDictionnary(data) {
 
 
     resultDisplay.innerHTML += `
-    <div class="container-source">
+    <div class="container-source light-mode">
     <p class="source">Source</p> <a class="light-mode" href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]}</a>
     <img src="assets/images/icon-new-window.svg">
     </div>`;

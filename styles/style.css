@@ -366,6 +366,9 @@ main {
   padding-top: 1.19rem;
   display: flex;
 }
+.container-source.darkMode {
+  border-top: solid 1px #3A3A3A;
+}
 .container-source .source {
   color: #757575;
   margin-right: 1.31rem;

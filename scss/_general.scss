@@ -423,6 +423,10 @@ main{
     padding-top: 1.19rem;
     display: flex;
 
+    &.darkMode {
+        border-top: solid 1px $separationDark;
+    }
+
     .source {
         @extend %bodyS;
         color: $textGrey;
